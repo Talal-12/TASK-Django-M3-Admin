@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# from pokemon import views <----- Alternative for below
+from pokemon.views import get_home, get_pokemon
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("home/", ),
+    path("pokemon/ <int:pokemon_id>/", get_pokemon)
 ]
